@@ -1,0 +1,21 @@
+{
+  "name": "affise/php-tracking",
+  "description": "Affise tracking SDK",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "vladimirkoptev",
+      "email": "vk@affise.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "guzzlehttp/guzzle": "^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Affise\\Tracking\\": "src"
+    }
+  }
+}
