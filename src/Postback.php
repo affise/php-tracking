@@ -101,15 +101,21 @@ class Postback
 
         switch ($key) {
             case "status":
-                $query[$param] = $this->status->value();
+                if (is_null($this->status)) {
+                    $query[$param] = $this->status->value();
+                }
                 break;
             case "customFields":
                 foreach ($this->customFields as $i => $value) {
-                    $query[$param . $i] = $value;
+                    if (!is_null($value)) {
+                        $query[$param . $i] = $value;
+                    }
                 }
                 break;
             default:
-                $query[$param] = $this->$key;
+                if (!is_null($this->$key)) {
+                    $query[$param] = $this->$key;
+                }
                 break;
         }
 
